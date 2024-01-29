@@ -1,0 +1,11 @@
+{% extends 'main.html' %} {% block content %}
+
+<form method="POST" action="">
+  {% csrf_token %}
+  <div class="container-sm mt-5">
+    <p>Are you sure want to delete this Expense "{{ obj }}"?</p>
+    <a class="btn btn-danger ms-4" href="{% url 'home' %}">No</a>
+    <input class="btn btn-success ms-4" type="submit" value="Yes, Delete!" />
+  </div>
+</form>
+{% endblock%}

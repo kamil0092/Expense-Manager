@@ -1,0 +1,16 @@
+{% extends 'main.html' %} {% block content %}
+<div class="container-sm m-5">
+  {% if page == 'create' %}
+  <h6>Create New Expense</h6>
+  {% else %}
+  <h6>Edit Expense</h6>
+  {% endif %}
+
+  <form method="POST" action="">
+    {% csrf_token %} {{ form.as_p }}
+    <a class="btn btn-secondary btn-sm" href="{% url 'home' %}">Cancel</a>
+    <input class="btn btn-success btn-sm ms-5" type="submit" value="Create Expense" />
+  </form>
+</div>
+
+{% endblock%}
